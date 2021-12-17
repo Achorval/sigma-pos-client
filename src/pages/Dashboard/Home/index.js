@@ -6,10 +6,7 @@ import empty from '../../../core/assets/images/svg/icons/General/Empty.svg';
 import SVG from 'react-inlinesvg';
 import { Modal,ModalHeader,ModalBody } from 'reactstrap';
 import * as actions from "../../../redux/actions/UserActions";
-import { 
-  Card,
-  Table,
-} from 'reactstrap';
+import { Card, Table } from 'reactstrap';
 
 export default function Dashboard() { 
   const [customers, setCustomers] = useState([]);
@@ -38,13 +35,14 @@ export default function Dashboard() {
         setTransactions(data.data)
       });
   };
-  console.log(src);
   
   const toggleQrcode = (id) => {
-    Qrcode.toDataURL(window.location.origin+'/customer/'+id).then((data) => {
-      toggle();
-      setSrc(data)
-    });
+    if (id) {
+      Qrcode.toDataURL(window.location.origin+'/customer/'+id).then((data) => {
+          toggle();
+          setSrc(data)
+      });
+    }
   };
 
   const checkStatus = (key) => {
@@ -68,7 +66,9 @@ export default function Dashboard() {
         break;
     }
   };
+
   let sn = 1;
+
   return (<>
     <Card className="card-box shadow-none mb-5">
       <div className="d-flex justify-content-between px-4 py-3">
@@ -115,7 +115,7 @@ export default function Dashboard() {
                         className="hover-scale-lg rounded-sm"
                         src={qrCode}
                         style={{ width: 90, cursor: 'pointer' }}
-                        onClick={() => toggleQrcode(n.id)}
+                        onClick={() => {toggleQrcode(n.id)}}
                       />
                     </td>
                   </tr>

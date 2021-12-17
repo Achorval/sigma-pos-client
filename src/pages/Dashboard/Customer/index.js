@@ -7,7 +7,7 @@ import {useDispatch} from 'react-redux';
 import { toast, Zoom } from 'react-toastify';
 import { Card } from 'reactstrap';
 import * as actions from '../../../redux/actions/UserActions';
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function Customer({match}) {
   const [loading, setLoading] = useState(false);
@@ -37,11 +37,9 @@ export default function Customer({match}) {
   }, [dispatch]);
 
   const customerSchema = Yup.object().shape({
-    amount: Yup.string()
+    amount: Yup.number()
       .required('Amount is required'),
-    pin: Yup.string()
-      .min(4, 'Minimum 4 symbols')
-      .max(4, 'Maximum 4 symbols')
+    pin: Yup.number()
       .required('Pin is required')
   });
 
@@ -109,7 +107,7 @@ export default function Customer({match}) {
                   <div className="d-flex justify-content-between mg-b-5">
                     <label className="font-weight-bold">Amount</label>
                   </div>
-                  <input placeholder='Amount' type='text' {...formik.getFieldProps('amount')}
+                  <input placeholder='Amount' type='number' {...formik.getFieldProps('amount')}
                     className={clsx(
                       'form-control',
                       {'is-invalid': formik.touched.amount && formik.errors.amount}
@@ -125,7 +123,7 @@ export default function Customer({match}) {
                   <div className="d-flex justify-content-between mg-b-5">
                     <label className="font-weight-bold">Pin</label>
                   </div>
-                  <input placeholder='Pin' type='text' {...formik.getFieldProps('pin')}
+                  <input placeholder='Pin' type='number' {...formik.getFieldProps('pin')} 
                     className={clsx(
                       'form-control',
                       {'is-invalid': formik.touched.pin && formik.errors.pin}

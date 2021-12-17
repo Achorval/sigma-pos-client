@@ -20,14 +20,6 @@ import { NavLink as NavLinkStrap } from 'reactstrap';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { connect } from 'react-redux';
 
-// import avatar1 from '../../../assets/images/avatars/avatar1.jpg';
-// import avatar2 from '../../../assets/images/avatars/avatar2.jpg';
-// import avatar5 from '../../../assets/images/avatars/avatar5.jpg';
-// import avatar6 from '../../../assets/images/avatars/avatar6.jpg';
-// import avatar7 from '../../../assets/images/avatars/avatar7.jpg';
-
-// import people3 from '../../../assets/images/stock-photos/people-3.jpg';
-
 import { PieChart } from 'react-feather';
 
 const PageTitle = (props) => {

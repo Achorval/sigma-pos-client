@@ -4,7 +4,6 @@ import { connect, useSelector, useDispatch, shallowEqual } from 'react-redux';
 import { setHeaderDrawerToggle } from '../../../../redux/reducers/ThemeOptions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {Badge,Button, UncontrolledTooltip} from 'reactstrap';
-import * as actions from '../../../../redux/actions/UserActions';
 import empty from '../../../assets/images/svg/icons/General/Empty.svg';
 import { toast, Zoom } from 'react-toastify';
 import SVG from 'react-inlinesvg';

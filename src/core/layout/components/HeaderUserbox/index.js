@@ -11,7 +11,7 @@ import {
   DropdownToggle,
   DropdownMenu
 } from 'reactstrap';
-import { Settings, UserCheck, LogOut } from 'react-feather';
+import { LogOut } from 'react-feather';
 import { Link } from 'react-router-dom';
 import avatar7 from '../../../assets/images/svg/icons/General/avatar.svg';
 

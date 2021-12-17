@@ -16,8 +16,6 @@ const AuthInit = (props) => {
         if (!didRequest.current) {
           const {data: user} = await actions.fetchUserByToken();
           dispatch(actions.fulfillUser(user.data));
-          // dispatch(actions.fetchServices());
-          // dispatch(actions.fetchDashboard());
         }
       } catch (error) {
         if (!didRequest.current) {
